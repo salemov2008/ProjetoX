@@ -13,19 +13,26 @@ def principal():
     print(lista_series)
     escolha = 0
     while True:
+
         try:
-            escolha = int(input("Digite o número da série que queira assitir (1 a 5): "))
+            escolha = int(input("Digite o número da série que queira assitir (Para sair digite 0): "))
         except ValueError:
-            print("Digite um que exista no nosso universo, por favor.")
-
-
-
-    while True:
+            print("\nxxxxxxxxxxx I N V Á L I D O xxxxxxxxxxxxxxxxx\n"
+                        "Digite um que exista no nosso universo, por favor.\n"
+                         "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n")
+            continue
+        if escolha == 0:
+            print("\n______________\n"
+                    "Encerrando...\n"
+                    "______________\n")
+            break
         if escolha not in lista_series:
-            print("Não está na lista.")
-        break
-
-
-
+            print("\nxxxxxxxxxxxxxxx\n"
+                  "Não está na lista. \n"
+                  "xxxxxxxxxxxxxxx\n")
+        else:
+            print(  "\n---------------------------------------\n"
+                    f"Série escolhida: {lista_series[escolha]}\n"
+                    "---------------------------------------\n")
 
 principal()
